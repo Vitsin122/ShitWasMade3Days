@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\add_criminal.png" />
+    <None Remove="Icons\archive.png" />
+    <None Remove="Icons\database.png" />
+    <None Remove="Icons\folder-plus.png" />
+    <None Remove="Icons\Logo.png" />
+    <None Remove="Icons\Logo2.png" />
+    <None Remove="Icons\search.png" />
+    <None Remove="Icons\StockPhoto.jpg" />
+    <None Remove="Icons\trash-2.png" />
+    <None Remove="Icons\Upload.png" />
+    <None Remove="Icons\Vector %282%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\add_criminal.png" />
+    <Resource Include="Icons\archive.png" />
+    <Resource Include="Icons\database.png" />
+    <Resource Include="Icons\folder-plus.png" />
+    <Resource Include="Icons\Logo.png" />
+    <Resource Include="Icons\Logo2.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\StockPhoto.jpg" />
+    <Resource Include="Icons\trash-2.png" />
+    <Resource Include="Icons\Upload.png" />
+    <Resource Include="Icons\Vector (2).png" />
+  </ItemGroup>
+
+</Project>

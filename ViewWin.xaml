@@ -1,0 +1,66 @@
+﻿<Window x:Class="Kursach.ViewWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kursach"
+        mc:Ignorable="d"
+        Title="ViewWin" Height="450" Width="800">
+    <Grid Background="#024073">
+        <DataGrid x:Name="dgSearchCrimes" AutoGenerateColumns="False" Margin="216,0,216,0" BorderThickness="0">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Все найденые преступники">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid Background="#024073">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Background="#024073" Grid.Column="0">
+                                    <Image Source="{Binding Path = _bytes}" Width="140" Height="180" Margin="5"/>
+                                    <Button x:Name="SearchDosie" Height="25" Width="90" Content="Досье" Click="SearchDosie_Click">
+                                        <Button.Resources>
+                                            <Style TargetType="{x:Type Border}">
+                                                <Setter Property="CornerRadius" Value="10"/>
+                                            </Style>
+                                        </Button.Resources>
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel Background="#024073" Grid.Column="1">
+                                    <Label Foreground="White" Content="Имя:"/>
+                                    <Border Margin="5" Background="White" CornerRadius="10">
+                                        <TextBlock Background="White" Text="{Binding Path = _name}" Margin="5"/>
+                                    </Border>
+                                    <Label Foreground="White" Content="Фамилия:"/>
+                                    <Border Margin="5" BorderThickness="1" Background="White" CornerRadius="10">
+                                        <TextBlock Background="White" Text="{Binding Path = _lastname}" Margin="5"/>
+                                    </Border>
+                                    <Label Foreground="White" Content="Преступная профессия:"/>
+                                    <Border Margin="5" BorderThickness="1" Background="White" CornerRadius="10">
+                                        <TextBlock Background="White" Text="{Binding Path = _crimeprof}" Margin="5"/>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Padding" Value="5"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridCell}">
+                                <Border Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                    <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+    </Grid>
+</Window>
